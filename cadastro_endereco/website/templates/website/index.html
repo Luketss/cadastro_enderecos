@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+{% if adress_list %}
+    <table style="border: 2px black solid;">
+            <tr>
+                <td>CEP</td>
+                <td>Endereco</td>
+                <td>Numero</td>
+                <td>UF</td>
+            </tr>
+        {% for endereco in adress_list %}
+            <tr>
+                <td>{{ endereco.cep}}</td>
+                <td>{{ endereco.endereco}}</td>
+                <td>{{ endereco.numero}}</td>
+                <td>{{ endereco.uf}}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No data avaliable.</p>
+{% endif %}
+
+<button>Cadastrar</button>
+</body>
+</html>
